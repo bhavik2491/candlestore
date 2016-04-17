@@ -1,0 +1,82 @@
+﻿@model IEnumerable<MVC_2.Models.Candles>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.catagories.CategoryName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.catagory)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.shortdecription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Updatedate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.qty)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.catagories.CategoryName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.catagory)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.shortdecription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Updatedate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qty)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CandlesId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CandlesId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CandlesId })
+        </td>
+    </tr>
+}
+
+</table>
+
